@@ -302,7 +302,7 @@ if(OPENMM_PYTHON_USER_INSTALL)
     set(PYTHON_SETUP_COMMAND "install --user")
 else()
     # Install binary module to system location
-    set(PYTHON_SETUP_COMMAND "install --root=\$ENV{DESTDIR}/")
+    set(PYTHON_SETUP_COMMAND "install --root=\$ENV{DESTDIR}/ --prefix=${CMAKE_INSTALL_PREFIX}")
 endif()
 configure_file(pysetup.cmake.in
     "${CMAKE_CURRENT_BINARY_DIR}/pysetupinstall.cmake" @ONLY)
