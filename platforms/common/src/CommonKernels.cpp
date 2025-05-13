@@ -1698,6 +1698,7 @@ public:
         thread_local static vector<double> parameters;
         thread_local static vector<int> groups;
         force.getBondParameters(index, groups, parameters);
+        particles.clear();
         for (int group : groups) {
             vector<int> groupParticles;
             vector<double> weights;
